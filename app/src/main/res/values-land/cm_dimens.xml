@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- History -->
+    <dimen name="history_text_size">20sp</dimen>
+
+    <!-- Display -->
+    <dimen name="display_height">100dp</dimen>
+    <dimen name="display_height_with_shadow">106dp</dimen>
+    <dimen name="display_formula_height">50dp</dimen>
+    <dimen name="display_result_height">50dp</dimen>
+    <dimen name="display_shadow">6dp</dimen>
+    <dimen name="display_height_graph_expanded">50dp</dimen>
+</resources>
