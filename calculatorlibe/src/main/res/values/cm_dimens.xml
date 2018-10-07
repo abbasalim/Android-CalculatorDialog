@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="display_text_size">40sp</dimen>
+    <!-- History -->
+    <dimen name="history_text_size">20sp</dimen>
+    <dimen name="history_graph_margin">60dp</dimen>
+
+    <!-- Display -->
+    <dimen name="display_height">100dp</dimen>
+    <dimen name="display_height_with_shadow">106dp</dimen>
+    <dimen name="display_formula_height">50dp</dimen>
+    <dimen name="display_result_height">50dp</dimen>
+    <dimen name="display_shadow">6dp</dimen>
+    <dimen name="history_margin">4dp</dimen>
+    <dimen name="display_height_graph_expanded">50dp</dimen>
+
+    <!-- Floating Calc -->
+    <dimen name="floating_display_height">59dp</dimen>
+    <dimen name="floating_display_height_with_shadow">65dp</dimen>
+    <dimen name="floating_height">280dp</dimen>
+    <dimen name="floating_width">280dp</dimen>
+
+    <!-- Number pad -->
+    <dimen name="num_margin_horizontal">14dp</dimen>
+    <dimen name="num_margin_vertical">10dp</dimen>
+    <dimen name="shadow_margin">5dp</dimen>
+
+
+    <!-- Calculator -->
+
+
+</resources>
