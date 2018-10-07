@@ -1,4 +1,4 @@
-package ir.esfandune.calculatordialog;
+package ir.esfandune.calculatorlibe;
 
 import android.app.Activity;
 import android.graphics.Color;
@@ -30,9 +30,9 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         v = c.getLayoutInflater().inflate(R.layout.alrt_calculator, null);
         alertDialog.setView(v);
         alertDialog.create();
-        history = (TextView) v.findViewById(R.id.history);
-        Nowtext = (TextView) v.findViewById(R.id.Nowtext);
-        img_done = (ImageView) v.findViewById(R.id.done);
+        history = v.findViewById(R.id.history);
+        Nowtext = v.findViewById(R.id.Nowtext);
+        img_done = v.findViewById(R.id.done);
     }
 
     public CalculatorDialog showDIalog() {
@@ -112,7 +112,7 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         return this;
     }
 
-    public String eval(final String str) throws Exception {
+    public String eval(final String str) {
         return df.format(new Object() {
             int pos = -1, ch;
 
@@ -219,7 +219,7 @@ public abstract class CalculatorDialog implements View.OnClickListener {
                 img_done.setEnabled(true);
             } catch (Exception e) {
                 e.printStackTrace();
-                Toast.makeText(c, "معادله کامل نیست! ", Toast.LENGTH_SHORT).show();
+                Toast.makeText(c, "معادله کامل نیست!", Toast.LENGTH_SHORT).show();
             }
         } else if (ViewID == R.id.op_add || ViewID == R.id.op_sub || ViewID == R.id.op_mul || ViewID == R.id.op_div) {
             char perlastChar = (S_history.length() >= 2) ? S_history.charAt(S_history.length() - 2) : 0;

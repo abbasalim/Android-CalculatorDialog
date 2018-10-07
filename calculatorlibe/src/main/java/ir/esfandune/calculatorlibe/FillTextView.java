@@ -1,4 +1,4 @@
-package ir.esfandune.calculatordialog;
+package ir.esfandune.calculatorlibe;
 
 import android.content.Context;
 import android.graphics.Paint;

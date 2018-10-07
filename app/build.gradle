@@ -1,14 +1,14 @@
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion '27.0.3'
     defaultConfig {
-//        applicationId "ir.esfandune.calculatordialog"
+        applicationId "ir.esfandune.calculatordialog"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1
         versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
@@ -16,14 +16,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-}
-repositories {
-    maven {
-        url "https://maven.google.com"
-    }
+
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:27.1.1'
+    testImplementation 'junit:junit:4.12'
+    implementation project(':calculatorlibe')
 }
+
