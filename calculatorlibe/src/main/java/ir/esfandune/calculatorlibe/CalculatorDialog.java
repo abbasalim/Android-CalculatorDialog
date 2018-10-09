@@ -272,7 +272,10 @@ public abstract class CalculatorDialog implements View.OnClickListener {
 
     }
 
-    public static void easyCalculate(Activity c,final TextView et_price, String spliter) {
+    public static void easyCalculate(Activity c,final TextView et_price) {
+        easyCalculate(c,et_price,",",false);
+    }
+    public static void easyCalculate(Activity c, final TextView et_price, String spliter, final boolean absRslt) {
         int value = 0;
         try {
             value = Integer.parseInt(et_price.getText().toString().trim().replaceAll(spliter, ""));
@@ -287,7 +290,8 @@ public abstract class CalculatorDialog implements View.OnClickListener {
                 double number = 0;
                 try {
                     number = nf.parse(result).doubleValue();
-                    et_price.setText(Math.round(number) + "");
+
+                    et_price.setText((absRslt?Math.abs(Math.round(number)):Math.round(number)) + "");
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }

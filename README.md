@@ -33,7 +33,9 @@ Step 2. Add the dependency
 
   1:Easy Way (input must Integer,Export is Math.round(result)):
   
-	 easyCalculate(YourActivity.this,Your_editText,",");
+	 easyCalculate(YourActivity.this,Your_editText,",",false);
+	 //or
+	 easyCalculate(this,et_price);// remove ",",No abs
 	
   
   2:Other Way :
@@ -65,4 +67,5 @@ Step 2. Add the dependency
   #نکته
   
   کاربران ایرانی ممکنه واسه افزودن کتابخونه به دلیل تحریم های ظالمانه بر علیه کشورمون نیاز به تغییر آی پی داشته باشند!
+  
 WaveAcc.ir

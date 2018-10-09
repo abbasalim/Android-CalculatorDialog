@@ -47,6 +47,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void easyCalc(View view) {
-        easyCalculate(this,et_price,",");
+        easyCalculate(this,et_price,",",false);
+//        or
+//        easyCalculate(this,et_price);
     }
 }
