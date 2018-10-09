@@ -23,7 +23,6 @@ Add it in your root build.gradle at the end of repositories:
 			maven { url 'https://jitpack.io' }
 		}
 	}
-Copy
 
 Step 2. Add the dependency
 
@@ -63,5 +62,7 @@ Step 2. Add the dependency
              }.setValue(value).showDIalog();
          }
 	
+  #نکته
   
+  کاربران ایرانی ممکنه واسه افزودن کتابخونه به دلیل تحریم های ظالمانه بر علیه کشورمون نیاز به تغییر آی پی داشته باشند!
 WaveAcc.ir
