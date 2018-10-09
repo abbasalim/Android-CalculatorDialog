@@ -13,6 +13,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
+import java.text.ParseException;
 
 
 public abstract class CalculatorDialog implements View.OnClickListener {
@@ -268,6 +270,30 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         Nowtext.setText(input + "");
         return this;
 
+    }
+
+    public static void easyCalculate(Activity c,final TextView et_price, String spliter) {
+        int value = 0;
+        try {
+            value = Integer.parseInt(et_price.getText().toString().trim().replaceAll(spliter, ""));
+        } catch (NumberFormatException e) {
+            e.printStackTrace();
+        }
+        new CalculatorDialog(c) {
+            @Override
+            public void onResult(String result) {
+
+                NumberFormat nf = NumberFormat.getInstance();
+                double number = 0;
+                try {
+                    number = nf.parse(result).doubleValue();
+                    et_price.setText(Math.round(number) + "");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }.setValue(value).showDIalog();
     }
 }
 

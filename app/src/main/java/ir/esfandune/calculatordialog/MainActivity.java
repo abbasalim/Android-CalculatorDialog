@@ -10,6 +10,8 @@ import java.text.ParseException;
 
 import ir.esfandune.calculatorlibe.CalculatorDialog;
 
+import static ir.esfandune.calculatorlibe.CalculatorDialog.easyCalculate;
+
 public class MainActivity extends AppCompatActivity {
     EditText et_price;
     @Override
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         et_price=findViewById(R.id.et_price);
+
     }
 
     public void showCalculator(View view) {
@@ -33,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
                 NumberFormat nf = NumberFormat.getInstance();
                 double number = 0;
                 try {
-                    number = Math.abs(nf.parse(result).doubleValue());//abs : manfi ro hazf mokone
-                    et_price.setText(Math.round(number) + "");
+                    number =nf.parse(result).doubleValue();
+                    et_price.setText(number+ "");
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
@@ -43,4 +46,7 @@ public class MainActivity extends AppCompatActivity {
         }.setValue(value).showDIalog();
     }
 
+    public void easyCalc(View view) {
+        easyCalculate(this,et_price,",");
+    }
 }
