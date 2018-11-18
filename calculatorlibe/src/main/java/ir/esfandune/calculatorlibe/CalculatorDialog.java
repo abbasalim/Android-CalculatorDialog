@@ -82,9 +82,9 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         int height = displayMetrics.heightPixels;
         int width = displayMetrics.widthPixels;
         if (width < height)//istade
-            ad.getWindow().setLayout((width * 65 / 100), (height * 60 / 100));
+            ad.getWindow().setLayout((width * 90 / 100), (height * 70 / 100));
         else //khabide
-            ad.getWindow().setLayout((width * 50 / 100), (height * 70 / 100));
+            ad.getWindow().setLayout((width * 60 / 100), (height * 90 / 100));
 
         //////////////////////////////////////////
         return this;

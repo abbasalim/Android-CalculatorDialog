@@ -16,7 +16,6 @@
         <Button
             android:id="@+id/digit_7"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit7" />
 
         <Button
@@ -28,62 +27,52 @@
         <Button
             android:id="@+id/digit_9"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit9" />
 
         <Button
             android:id="@+id/digit_4"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit4" />
 
         <Button
             android:id="@+id/digit_5"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit5" />
 
         <Button
             android:id="@+id/digit_6"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit6" />
 
         <Button
             android:id="@+id/digit_1"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit1" />
 
         <Button
             android:id="@+id/digit_2"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit2" />
 
         <Button
             android:id="@+id/digit_3"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit3" />
 
         <Button
             android:id="@+id/dot"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="." />
 
         <Button
             android:id="@+id/digit_0"
             style="@style/PadButtonStyle.FloatingCalc"
-
             android:text="@string/digit0" />
 
         <Button
             android:id="@+id/eq"
             style="@style/PadButtonStyle.FloatingCalc"
             android:contentDescription="@string/desc_eq"
-
             android:text="@string/eq" />
 
     </ir.esfandune.calculatorlibe.SolidPadLayout>
@@ -93,7 +82,6 @@
         style="@style/PadLayoutStyle.Operator"
         android:background="@color/pad_operator_background_color"
         android:columnCount="1"
-        android:paddingRight="20dip"
         android:rowCount="5">
 
         <Button
@@ -106,14 +94,12 @@
             android:id="@+id/op_mul"
             style="@style/PadButtonStyle.FloatingCalc"
             android:contentDescription="@string/desc_op_mul"
-
             android:text="@string/op_mul" />
 
         <Button
             android:id="@+id/op_sub"
             style="@style/PadButtonStyle.FloatingCalc"
             android:contentDescription="@string/desc_op_sub"
-
             android:text="@string/op_sub" />
 
         <Button

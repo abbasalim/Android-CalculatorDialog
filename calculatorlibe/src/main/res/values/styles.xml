@@ -142,7 +142,7 @@
     </style>
 
     <style name="PadButtonStyle.FloatingCalc">
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">40sp</item>
     </style>
 
     <!--<style name="PadButtonStyle.FloatingCalc.Advanced">
