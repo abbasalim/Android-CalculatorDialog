@@ -7,7 +7,7 @@
     <color name="calculator_accent_color">#00BCD4</color>
 
     <!-- Color to indicate an error has occured. -->
-    <color name="calculator_error_color">#F40056</color>
+    <color name="calculator_error_color">#F15D63</color>
 
     <!-- Background color of the calculator display. -->
 

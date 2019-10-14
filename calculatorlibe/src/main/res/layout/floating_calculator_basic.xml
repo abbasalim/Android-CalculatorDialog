@@ -1,17 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+
     android:layout_height="match_parent">
 
     <ir.esfandune.calculatorlibe.SolidPadLayout
         style="@style/PadLayoutStyle.Numeric"
-        android:background="@color/pad_numeric_background_color"
         android:columnCount="3"
-        android:paddingBottom="@dimen/num_margin_vertical"
-        android:paddingLeft="@dimen/num_margin_horizontal"
-        android:paddingRight="@dimen/num_margin_horizontal"
-        android:paddingTop="@dimen/num_margin_vertical"
-        android:rowCount="4">
+
+        android:rowCount="5">
+
+        <Button
+            android:id="@+id/dlteAll"
+            style="@style/PadButtonStyle.FloatingCalc"
+            android:text="@string/C"
+            android:textColor="@color/calculator_error_color" />
+
+
+
+        <Button
+            android:id="@+id/digit_"
+            style="@style/PadButtonStyle.FloatingCalc"
+            android:text=""
+            android:textColor="@color/calculator_error_color" />
+
+        <ImageView
+            android:id="@+id/clr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:padding="10dp"
+            android:src="@drawable/ic_c_rmv_char" />
+
 
         <Button
             android:id="@+id/digit_7"
@@ -62,7 +82,7 @@
         <Button
             android:id="@+id/dot"
             style="@style/PadButtonStyle.FloatingCalc"
-            android:text="." />
+            android:text="," />
 
         <Button
             android:id="@+id/digit_0"
@@ -77,10 +97,10 @@
 
     </ir.esfandune.calculatorlibe.SolidPadLayout>
 
-    <ir.esfandune.calculatorlibe.SolidPadLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <ir.esfandune.calculatorlibe.SolidPadLayout
         android:id="@+id/pad_operator"
         style="@style/PadLayoutStyle.Operator"
-        android:background="@color/pad_operator_background_color"
+
         android:columnCount="1"
         android:rowCount="5">
 
@@ -88,33 +108,37 @@
             android:id="@+id/op_div"
             style="@style/PadButtonStyle.FloatingCalc"
             android:contentDescription="@string/desc_op_div"
+            android:textColor="@color/calculator_error_color"
             android:text="@string/op_div" />
 
         <Button
             android:id="@+id/op_mul"
             style="@style/PadButtonStyle.FloatingCalc"
             android:contentDescription="@string/desc_op_mul"
+            android:textColor="@color/calculator_error_color"
             android:text="@string/op_mul" />
 
         <Button
             android:id="@+id/op_sub"
             style="@style/PadButtonStyle.FloatingCalc"
             android:contentDescription="@string/desc_op_sub"
+            android:textColor="@color/calculator_error_color"
             android:text="@string/op_sub" />
 
         <Button
             android:id="@+id/op_add"
             style="@style/PadButtonStyle.FloatingCalc"
             android:contentDescription="@string/desc_op_add"
-
+                android:textColor="@color/calculator_error_color"
             android:text="@string/op_add" />
 
         <ImageView
             android:id="@+id/done"
             style="@style/PadButtonStyle.FloatingCalc"
-            android:padding="1dp"
-            android:src="@drawable/ic_c_done"
-
+            android:layout_margin="5dp"
+            android:background="@drawable/circle_red"
+            android:padding="5dp"
+            android:src="@drawable/ic_done_c"
             />
     </ir.esfandune.calculatorlibe.SolidPadLayout>
 

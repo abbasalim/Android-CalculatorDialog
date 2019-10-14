@@ -86,6 +86,7 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         else //khabide
             ad.getWindow().setLayout((width * 60 / 100), (height * 90 / 100));
 
+       ad.getWindow().getDecorView().setBackgroundResource(R.drawable.bg_corner_for_dialogs);
         //////////////////////////////////////////
         return this;
     }
