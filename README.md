@@ -5,7 +5,8 @@
 
 
 <p align="center">
-  <img src="http://uupload.ir/files/mw47_screenshot_from_2018-08-16_19-33-34.png" width="350" title="example">
+  <img src="http://uupload.ir/files/r1gk_screenshot_1571043912.png" width="350" title="example">
+	 <img src="http://uupload.ir/files/zu29_screenshot_1571043933.png" width="350" title="example">
 </p>
 
 
@@ -27,7 +28,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.abbasalim:Android-CalculatorDialog:v2.4'
+	        implementation 'com.github.abbasalim:Android-CalculatorDialog:v2.4.5'
 	}
 	
 
