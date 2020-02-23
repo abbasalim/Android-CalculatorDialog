@@ -3,7 +3,6 @@ package ir.esfandune.calculatorlibe;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
-import android.support.v7.app.AlertDialog;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -12,8 +11,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
+
 import java.text.DecimalFormat;
-import java.text.NumberFormat;
 import java.text.ParseException;
 
 
@@ -266,39 +266,43 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         }
     }
 
-    public CalculatorDialog setValue(int input) {
-        history.setText(input + "");
-        Nowtext.setText(input + "");
-        return this;
-
+    public static void easyCalculate(Activity c,final TextView et_price,boolean round) {
+        easyCalculate(c,et_price,",",false,round);
     }
 
-    public static void easyCalculate(Activity c,final TextView et_price) {
-        easyCalculate(c,et_price,",",false);
-    }
-    public static void easyCalculate(Activity c, final TextView et_price, String spliter, final boolean absRslt) {
-        int value = 0;
+    public static void easyCalculate(Activity c, final TextView et_price, String spliter, final boolean absRslt, final boolean round) {
+        double value = 0;
         try {
-            value = Integer.parseInt(et_price.getText().toString().trim().replaceAll(spliter, ""));
+            value = Double.parseDouble(et_price.getText().toString().trim().replaceAll(spliter, ""));
         } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         new CalculatorDialog(c) {
             @Override
             public void onResult(String result) {
-
-                NumberFormat nf = NumberFormat.getInstance();
-                double number = 0;
+//                NumberFormat nf = NumberFormat.getInstance();
                 try {
-                    number = nf.parse(result).doubleValue();
+                    double number = df.parse(result).doubleValue();
 
-                    et_price.setText((absRslt?Math.abs(Math.round(number)):Math.round(number)) + "");
+                    if (round)
+                        number=((absRslt?Math.abs(Math.round(number)):Math.round(number)));
+                    else
+                        number=(absRslt?Math.abs(number):number);
+
+                    et_price.setText(df.format(number));
                 } catch (ParseException e) {
                     e.printStackTrace();
                 }
 
             }
         }.setValue(value).showDIalog();
+    }
+
+    public CalculatorDialog setValue(double input) {
+        history.setText(input + "");
+        Nowtext.setText(input + "");
+        return this;
+
     }
 }
 
