@@ -28,7 +28,7 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.abbasalim:Android-CalculatorDialog:v2.4.5'
+	        implementation 'com.github.abbasalim:Android-CalculatorDialog:v3.0.1'
 	}
 	
 
