@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.util.Locale;
 
 import ir.esfandune.calculatorlibe.CalculatorDialog;
 
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onResult(String result) {
 
-                NumberFormat nf = NumberFormat.getInstance();
+                NumberFormat nf = NumberFormat.getInstance(Locale.ENGLISH);
                 double number = 0;
                 try {
                     number =nf.parse(result).doubleValue();
