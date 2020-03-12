@@ -52,7 +52,7 @@ Step 2. Add the dependency
                  @Override
                  public void onResult(String result) {
      
-                     NumberFormat nf = NumberFormat.getInstance();
+                     NumberFormat nf = NumberFormat.getInstance(Locale.ENGLISH);
                      double number = 0;
                      try {
                          number =nf.parse(result).doubleValue();
