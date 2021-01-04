@@ -3,7 +3,9 @@ package ir.esfandune.calculatorlibe;
 import android.app.Activity;
 import android.graphics.Color;
 import android.graphics.PorterDuff;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.Button;
@@ -15,6 +17,7 @@ import androidx.appcompat.app.AlertDialog;
 
 import java.text.DecimalFormat;
 import java.text.DecimalFormatSymbols;
+import java.text.NumberFormat;
 import java.text.ParseException;
 import java.util.Locale;
 
@@ -27,6 +30,7 @@ public abstract class CalculatorDialog implements View.OnClickListener {
     private ImageView img_done;
     private AlertDialog.Builder alertDialog;
     private View v;
+    private final char  thousandSprt=',';
 
     public CalculatorDialog(Activity context) {
         c = context;
@@ -37,6 +41,37 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         history = v.findViewById(R.id.history);
         Nowtext = v.findViewById(R.id.Nowtext);
         img_done = v.findViewById(R.id.done);
+
+        Nowtext.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                Nowtext.removeTextChangedListener(this);
+                try {
+                    DecimalFormat formatter = (DecimalFormat) NumberFormat.getInstance(Locale.US);
+                    DecimalFormatSymbols symbols = formatter.getDecimalFormatSymbols();
+                    symbols.setGroupingSeparator(thousandSprt);
+                    formatter.setDecimalFormatSymbols(symbols);
+
+                    Nowtext.setText(formatter.format(Long.parseLong(charSequence.toString().replace(thousandSprt+"",""))));
+
+                } catch (NumberFormatException e) {
+                    e.printStackTrace();
+                }finally {
+                    Nowtext.addTextChangedListener(this);
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
     }
 
     public static void easyCalculate(Activity c, final TextView et_price, boolean round) {
@@ -73,6 +108,8 @@ public abstract class CalculatorDialog implements View.OnClickListener {
 //        EditText editText = (EditText)v.findViewById(R.id.label_field);
         final AlertDialog ad = alertDialog.show();
         v.findViewById(R.id.digit_0).setOnClickListener(this);
+        v.findViewById(R.id.digit_00).setOnClickListener(this);
+        v.findViewById(R.id.digit_000).setOnClickListener(this);
         v.findViewById(R.id.digit_1).setOnClickListener(this);
         v.findViewById(R.id.digit_2).setOnClickListener(this);
         v.findViewById(R.id.digit_3).setOnClickListener(this);
@@ -104,7 +141,7 @@ public abstract class CalculatorDialog implements View.OnClickListener {
         img_done.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onResult(Nowtext.getText().toString().trim());
+                onResult(Nowtext.getText().toString().trim().replace(thousandSprt+"",""));
                 ad.dismiss();
             }
         });

@@ -6,8 +6,8 @@ android {
         applicationId "ir.esfandune.calculatordialog"
         minSdkVersion 15
         targetSdkVersion 29
-        versionCode 4
-        versionName "3.0.1"
+        versionCode 5
+        versionName "3.1.0"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -21,8 +21,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    testImplementation 'junit:junit:4.13'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    testImplementation 'junit:junit:4.13.1'
     implementation project(':calculatorlibe')
 }
 

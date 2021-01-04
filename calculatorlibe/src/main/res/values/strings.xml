@@ -79,6 +79,8 @@
     <string name="app_name" msgid="8095131950334945205">"ماشین حساب"</string>
     <string name="error" msgid="9197457880925804499">"خطا"</string>
     <string name="digit0" msgid="8069590963464434135">"0"</string>
+    <string name="digit00" msgid="8069590963464434135">"00"</string>
+    <string name="digit000" msgid="8069590963464434135">"000"</string>
     <string name="digit1" msgid="8535041374797804029">"1"</string>
     <string name="digit2" msgid="8977354203154316247">"2"</string>
     <string name="digit3" msgid="148544090755132760">"3"</string>
