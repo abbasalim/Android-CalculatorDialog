@@ -3,24 +3,20 @@ package ir.esfandune.calculatordialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.util.Locale;
 
 import ir.esfandune.calculatorlibe.CalculatorDialog;
 
-import static ir.esfandune.calculatorlibe.CalculatorDialog.easyCalculate;
 
 public class MainActivity extends AppCompatActivity {
     EditText et_price;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        et_price=findViewById(R.id.et_price);
+        et_price = findViewById(R.id.et_price);
 
     }
 
@@ -34,22 +30,13 @@ public class MainActivity extends AppCompatActivity {
         new CalculatorDialog(this) {
             @Override
             public void onResult(String result) {
-
-                NumberFormat nf = NumberFormat.getInstance(Locale.ENGLISH);
-                double number = 0;
-                try {
-                    number =nf.parse(result).doubleValue();
-                    et_price.setText(number+ "");
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
-
+                et_price.setText(result);
             }
         }.setValue(value).showDIalog();
     }
 
     public void easyCalc(View view) {
-        easyCalculate(this,et_price,",",false,false);
+        CalculatorDialog.Companion.easyCalculate(this, et_price, ",", false, false);
 //        or
 //        easyCalculate(this,et_price);
     }
