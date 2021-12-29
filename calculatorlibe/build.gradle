@@ -11,7 +11,7 @@ android {
 
 
     defaultConfig {
-        minSdkVersion 21
+        minSdkVersion 15
         targetSdkVersion 31
 
 
@@ -32,7 +32,7 @@ dependencies {
     implementation "androidx.core:core-ktx:+"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
-    implementation 'com.github.SimpleMobileTools:Simple-Commons:3bbf37c7f9'
+//    implementation 'com.github.SimpleMobileTools:Simple-Commons:3bbf37c7f9'
     implementation 'me.grantland:autofittextview:0.2.1'
     implementation 'net.objecthunter:exp4j:0.4.8'
 

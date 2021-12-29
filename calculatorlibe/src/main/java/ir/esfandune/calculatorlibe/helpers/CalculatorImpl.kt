@@ -1,11 +1,9 @@
 package com.simplemobiletools.calculator.helpers
 
 import android.content.Context
-import android.util.Log
-import com.simplemobiletools.commons.extensions.toast
+import android.widget.Toast
 import ir.esfandune.calculatorlibe.R
 import net.objecthunter.exp4j.ExpressionBuilder
-import java.io.Console
 
 class CalculatorImpl(calculator: Calculator, private val context: Context) {
     private var callback: Calculator? = calculator
@@ -173,7 +171,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
 
             try {
                 if (sign == "÷" && secondValue == 0.0) {
-                    context.toast(R.string.formula_divide_by_zero_error)
+                    toast("divide by zero error\nتقسیم بر صفر رخ داد")
                     return
                 }
 
@@ -193,7 +191,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
                 }
 
                 if (result.isInfinite() || result.isNaN()) {
-                    context.toast(R.string.unknown_error_occurred)
+                    toast("unknown error occurred\nخطای ناشناخته رخ داد")
                     return
                 }
 
@@ -202,7 +200,7 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
                 inputDisplayedFormula = result.format()
                 showNewFormula(expression.replace("sqrt", "√").replace("*", "×").replace("/", "÷"))
             } catch (e: Exception) {
-                context.toast(R.string.unknown_error_occurred)
+                toast("unknown error occurred\nخطای ناشناخته رخ داد")
             }
         }
     }
@@ -357,6 +355,10 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
 
         lastKey = DECIMAL
         showNewResult(inputDisplayedFormula)
+    }
+    
+    private fun toast(txt:String){
+        Toast.makeText(context,txt,Toast.LENGTH_SHORT).show()
     }
 
 }
