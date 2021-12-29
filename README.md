@@ -28,15 +28,15 @@ Add it in your root build.gradle at the end of repositories:
 Step 2. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.abbasalim:Android-CalculatorDialog:v3.0.1'
+	        implementation 'com.github.abbasalim:Android-CalculatorDialog:v4.0.2'
 	}
 	
 
   1:Easy Way (input must Integer,Export is Math.round(result)):
   
-	 easyCalculate(YourActivity.this,Your_editText,",",false);
+	 CalculatorDialog.Companion.easyCalculate(YourActivity.this,Your_editText,",",false);
 	 //or
-	 easyCalculate(this,et_price);// remove ",",No abs
+	 CalculatorDialog.Companion.easyCalculate(this,et_price);// remove ",",No abs
 	
   
   2:Other Way :
