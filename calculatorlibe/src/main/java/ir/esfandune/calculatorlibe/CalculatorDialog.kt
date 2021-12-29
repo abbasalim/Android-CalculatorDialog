@@ -168,13 +168,13 @@ abstract class CalculatorDialog(private val context: Activity) : Calculator {
     }
 
     open fun setValue(input: Double): CalculatorDialog {
-        showNewResult(input.toString(), context)
+        showNewResult(input.toString().replace("[^0-9.]".toRegex(),""), context)
         return this
     }
 
     open fun showDIalog(): CalculatorDialog {
         val ad = alertDialog.show()
-        val displayMetrics = DisplayMetrics()
+/*        val displayMetrics = DisplayMetrics()
         context.windowManager.defaultDisplay.getMetrics(displayMetrics)
         val height = displayMetrics.heightPixels
         val width = displayMetrics.widthPixels
@@ -188,11 +188,11 @@ abstract class CalculatorDialog(private val context: Activity) : Calculator {
             ad.window?.setLayout(width * 60 / 100, height * 90 / 100)
             lp.height = height * 90 / 100;
         }
-        ad.window?.decorView?.setBackgroundResource(R.drawable.bg_corner_for_dialogs)
         v.layoutParams = lp
-        v.invalidate()
+        v.invalidate()*/
+        ad.window?.decorView?.setBackgroundResource(R.drawable.bg_corner_for_dialogs)
         v.findViewById<View>(R.id.btn_done).setOnClickListener {
-            val finalRslt = result.text.toString().trim().replace("[^0-9.]".toRegex(), "");
+            val finalRslt = result.text.toString().replace("[^0-9.]".toRegex(), "");
             onResult(finalRslt);
             ad.dismiss();
             Log.d("Result:",finalRslt)

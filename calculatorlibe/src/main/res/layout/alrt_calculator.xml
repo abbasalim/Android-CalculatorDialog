@@ -6,7 +6,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#2E2C2C"
     tools:ignore="HardcodedText">
 
     <TextView
@@ -248,10 +247,10 @@
     <TextView
         android:background="@drawable/btn_result"
         android:id="@+id/btn_done"
-        android:layout_margin="12dp"
+        android:layout_margin="8dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="2"
+        android:layout_height="45dp"
+
         android:textColor="#fff"
         android:gravity="center"
         android:text="ثبت نتیجه"
