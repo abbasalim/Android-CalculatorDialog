@@ -34,9 +34,9 @@ Step 2. Add the dependency
 
   1:Easy Way (input must Integer,Export is Math.round(result)):
   
-	 easyCalculate(YourActivity.this,Your_editText,",",false);
+	 CalculatorDialog.Companion.easyCalculate(YourActivity.this,Your_editText,",",false);
 	 //or
-	 easyCalculate(this,et_price);// remove ",",No abs
+	 CalculatorDialog.Companion.easyCalculate(this,et_price);// remove ",",No abs
 	
   
   2:Other Way :
