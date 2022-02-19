@@ -17,6 +17,7 @@ import java.text.DecimalFormat
 import java.text.DecimalFormatSymbols
 import java.text.ParseException
 import java.util.*
+import kotlin.math.roundToInt
 
 
 abstract class CalculatorDialog(private val context: Activity) : Calculator {
@@ -168,7 +169,8 @@ abstract class CalculatorDialog(private val context: Activity) : Calculator {
     }
 
     open fun setValue(input: Double): CalculatorDialog {
-        showNewResult(input.toString().replace("[^0-9.]".toRegex(),""), context)
+//        showNewResult(input.toString().replace("[^0-9.]".toRegex(),""), context)
+        calc.addDefault(input)
         return this
     }
 

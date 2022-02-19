@@ -332,6 +332,15 @@ class CalculatorImpl(calculator: Calculator, private val context: Context) {
         addThousandsDelimiter()
         showNewResult(inputDisplayedFormula)
     }
+    public fun addDefault(number: Double) {
+        if (inputDisplayedFormula == "0") {
+            inputDisplayedFormula = ""
+        }
+
+        inputDisplayedFormula += number
+        addThousandsDelimiter()
+        showNewResult(inputDisplayedFormula)
+    }
 
     private fun zeroClicked() {
         val valueToCheck = inputDisplayedFormula.trimStart('-').replace(",", "")
