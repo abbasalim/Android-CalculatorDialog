@@ -30,7 +30,7 @@ dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.4.0'
 //    implementation "androidx.core:core-ktx:+"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+//    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 
 //    implementation 'com.github.SimpleMobileTools:Simple-Commons:3bbf37c7f9'
     implementation 'me.grantland:autofittextview:0.2.1'
