@@ -1,11 +1,12 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 31
+
     defaultConfig {
         applicationId "ir.esfandune.calculatordialog"
         minSdkVersion 15
-        targetSdkVersion 31
+        targetSdkVersion 34
+        compileSdk 34
         versionCode 5
         versionName "4.0.3"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
@@ -21,8 +22,8 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation 'androidx.appcompat:appcompat:1.4.0'
-    testImplementation 'junit:junit:4.13.1'
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    testImplementation 'junit:junit:4.13.2'
     implementation project(':calculatorlibe')
 }
 
